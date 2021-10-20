@@ -1,0 +1,92 @@
+<!doctype html>
+<html lang="en" dir="ltr">
+<head>
+    <meta charset="UTF-8">
+    <title>Svetofor</title>
+    <script src="https://cdn.jsdelivr.net/npm/vue@2/dist/vue.js"></script>
+    <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+</head>
+<body>
+<div class="">
+    <div id="app">
+        <div id="light1" class="light">
+            <h1 class="time" v-if="isRedActive">{{time}}</h1>
+            <h1 class="time" v-else-if="isYellowActive">{{timeYellow}}</h1>
+            <h1 class="time" v-else-if="isGreenActive">{{timeGreen}}</h1>
+            <div class="light1"  v-bind:class="{'red':isRedActive}"></div>
+            <div class="light1" v-bind:class="{'yellow':isYellowActive}"><span></span></div>
+            <div class="light1"  v-bind:class="{'green':isGreenActive}"></div>
+        </div>
+    </div>
+</div>
+
+<!--<script type="text/javascript">-->
+<!--    var app=new Vue({-->
+<!--        el: '#light1',-->
+<!--        data:{-->
+<!--            time:15,-->
+<!--            active:'green'-->
+<!--        },-->
+<!--        methods:{-->
+
+<!--        },-->
+<!--    })-->
+<!--    setInterval(function(){-->
+<!--        document.getElementById('light1').time&#45;&#45;;-->
+<!--    },1000);-->
+<!--</script>-->
+
+<script type="text/javascript" src="app.js"></script>
+</body>
+
+
+<style>
+
+    .time{
+        background-color: white;
+        border: 3px solid grey;
+        text-align:center ;
+
+    }
+    .light{
+        background-color: black;
+        display: inline-block;
+    }
+
+    .light1{
+        width: 80px;
+        height: 80px;
+        margin: 20px;
+        border-radius: 100px;
+        border:1px solid white;
+    }
+
+
+    .red{
+        background-color: red;
+
+    }
+
+    .yellow{
+        background-color: yellow;
+        position: relative;
+
+    }
+    span{
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%,-50%);
+        font-size: 40px;
+    }
+    .green{
+        background-color: green;
+    }
+
+    #green{
+        background-color: green;
+    }
+
+
+</style>
+</html>
